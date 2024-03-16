@@ -1,6 +1,6 @@
-import { User } from '../entity/User'
-import { userRepository } from '../repository/UserRepository'
-import userSchema from './schema/UserSchema'
+import { User } from '../../entity/User/User'
+import { userRepository } from '../../repository/UserRepository'
+import userSchema from '../schema/UserSchema'
 import { z } from 'zod'
 
 type UserRequest = z.infer<typeof userSchema>

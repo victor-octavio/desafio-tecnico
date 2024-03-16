@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class DropColumnApostas implements MigrationInterface {
+export class DropColumnApostas1710509084915 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`ALTER TABLE \`users\` DROP COLUMN \`aposta1\``);
