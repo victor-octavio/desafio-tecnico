@@ -2,9 +2,8 @@ import { Request, Response } from 'express'
 import { CreateRandomNumberService } from '../../service/RandomNumber/CreateRandomNumberService'
 import GenerateNumberService from '../../service/RandomNumber/GenerateNumberService'
 
-
 export class RandomNumberCreateController {
-  async handle(request:Request, response: Response) {
+  async handle(request: Request, response: Response) {
     const service = new CreateRandomNumberService()
     const result = await service.execute(new GenerateNumberService().generate())
     console.log(result)

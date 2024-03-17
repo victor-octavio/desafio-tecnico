@@ -2,6 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity('randomNumber')
 export class RandomNumber {
+    [x: string]: number
     @PrimaryGeneratedColumn('increment')
     id: number
 
