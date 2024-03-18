@@ -19,6 +19,7 @@ export class GenerateNumberService {
 
   getRandomNumber(usedNumbers: number[]) {
     var random: number
+
     do {
       random = Math.floor(Math.random() * (50 - 1 + 1) + 1)
     } while (usedNumbers.includes(random))

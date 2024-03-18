@@ -19,10 +19,10 @@ export class FindBetsController {
         const rightBets: number[] = betArray.filter(number =>
           randomNumbers.some(
             randomNumber =>
-              randomNumber.bet1 ||
-              randomNumber.bet2 ||
-              randomNumber.bet3 ||
-              randomNumber.bet4 ||
+              randomNumber.bet1 === number ||
+              randomNumber.bet2 === number ||
+              randomNumber.bet3 === number ||
+              randomNumber.bet4 === number ||
               randomNumber.bet5 === number
           )
         )
