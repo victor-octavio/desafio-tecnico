@@ -4,14 +4,19 @@ import GenerateNumberService from '../../service/RandomNumber/GenerateNumberServ
 
 export class RandomNumberCreateController {
   async handle(request: Request, response: Response) {
-    const service = new CreateRandomNumberService()
-    const result = await service.execute(new GenerateNumberService().generate())
-    console.log(result)
+    try {
+      const service = new CreateRandomNumberService()
+      const result = await service.execute(new GenerateNumberService().generate())
+      console.log(result)
 
-    if (result instanceof Error) {
-      return response.status(400).json(result.message)
+      if (result instanceof Error) {
+        return response.status(400).json(result.message)
+      }
+
+      return response.json(result)
+    } catch (error) {
+      console.error(error)
+      return response.status(500).json({ message: 'Server Error!' })
     }
-
-    return response.json(result)
   }
 }

@@ -3,8 +3,15 @@ import { GetAllRandomNumberService } from '../../service/RandomNumber/GetAllRand
 
 export class RandomNumberGetAllController {
   async handle(request: Request, response: Response) {
-    const randomNumberService = new GetAllRandomNumberService()
-    const randomNumbers = await randomNumberService.execute()
-    return response.json(randomNumbers)
+    try {
+      const randomNumberService = new GetAllRandomNumberService()
+      const randomNumbers = await randomNumberService.execute()
+      return response.json(randomNumbers)
+    } catch (error) {
+      console.error(error)
+      return response.status(500).json({
+        message: 'Fail to fetch random number!'
+      })
+    }
   }
 }

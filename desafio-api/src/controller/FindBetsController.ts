@@ -30,7 +30,7 @@ export class FindBetsController {
       })
       return response.json(winnerBets)
     } catch (error) {
-      return response.status(500).json({ error: 'Fail to find the winners:' })
+      return response.status(500).json({ error: 'Fail to find the winners' })
     }
   }
 }
