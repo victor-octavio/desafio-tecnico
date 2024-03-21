@@ -7,7 +7,6 @@ export class RandomNumberCreateController {
     try {
       const service = new CreateRandomNumberService()
       const result = await service.execute(new GenerateNumberService().generate())
-      console.log(result)
 
       if (result instanceof Error) {
         return response.status(400).json(result.message)

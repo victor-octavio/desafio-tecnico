@@ -21,8 +21,8 @@ export class GenerateNumberService {
     var random: number
 
     do {
-      random = Math.floor(Math.random() * (50 - 1 + 1) + 1)
-    } while (usedNumbers.includes(random))
+      random = Math.floor(Math.random() * (50) + 1)  // Gera valor aleatório entre 1 e 50
+    } while (usedNumbers.includes(random))  // Verifica se o valor gerado é igual a outro valor dentro do array, caso seja ele gera outro número
 
     return random
   }
