@@ -14,7 +14,7 @@ export const AppDataSource = new DataSource({
   port: 3306,
   username: 'root',
   password: 'root',
-  database: 'teste',
+  database: 'desafiodb',
   synchronize: true,
   logging: false,
   entities: [User, RandomNumber],
