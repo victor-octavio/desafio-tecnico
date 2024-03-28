@@ -15,6 +15,7 @@ export class RandomNumberCreateController {
       return response.json(result)
     } catch (error) {
       console.error(error)
+      
       return response.status(500).json({ message: 'Server Error!' })
     }
   }
